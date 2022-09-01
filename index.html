@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>HTML5 Canvas Drawing Board</title>
+    <script type="text/JavaScript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="javascript.js"></script>
+</head>
+
+<body></body>
+<canvas id="myCanvas">
+    Sorry, your browser does not support HTML5 canvas technology.
+</canvas>
+<span id="Span">
+    <button id="pen" onclick="showDiv()">
+        PEN
+    </button>
+    <button id="eraser" onclick="eraserMenu()">
+        ERASER
+    </button>
+
+
+    <div id="hiddenDiv" hidden>
+        <form action="">
+            <input type="color" id="colorSelector">
+            <input type="range" id="widthSelector" value="1">
+        </form>
+    </div>
+
+    <div id="eraserMenu" hidden>
+        <form action="">
+            <input type="range" id="eraserWidth" value="40">
+        </form>
+    </div>
+
+</span>
+</body>
+
+</html>
