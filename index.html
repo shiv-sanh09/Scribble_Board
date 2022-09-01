@@ -16,23 +16,27 @@
 </canvas>
 <span id="Span">
     <button id="pen" onclick="showDiv()">
-        PEN
+        <img src="C:\Users\achar\Desktop\whiteboard\download.png" alt="" width="40" height="40">
     </button>
     <button id="eraser" onclick="eraserMenu()">
-        ERASER
+        <img src="C:\Users\achar\Desktop\whiteboard\download (1).png"
+            alt="C:\Users\achar\Desktop\whiteboard\download (1).png" width="40px" height="40px">
     </button>
-
+    <button id="eraser" onclick="eraseAll()">
+        <img src="C:\Users\achar\Desktop\whiteboard\clear-icon-2.png"
+            alt="C:\Users\achar\Desktop\whiteboard\download (1).png" width="40px" height="40px">
+    </button>
 
     <div id="hiddenDiv" hidden>
         <form action="">
             <input type="color" id="colorSelector">
-            <input type="range" id="widthSelector" value="1">
+            <input type="range" id="widthSelector">
         </form>
     </div>
 
     <div id="eraserMenu" hidden>
         <form action="">
-            <input type="range" id="eraserWidth" value="40">
+            <input type="range" id="eraserWidth">
         </form>
     </div>
 

@@ -15,12 +15,25 @@ html {
 
 #Span {
     position: absolute;
+    left: 45%;
+    top: 5%;
+    padding: 2px;
+    background-color: beige;
+    border-style: groove;
+    border-color: black;
+    border-width: 1px;
 }
 
 #hiddenDiv {
+
     border-style: inset;
 }
 
 #eraserMenu {
     border-style: inset;
+}
+
+#pen,
+#eraser {
+    padding: 5px;
 }

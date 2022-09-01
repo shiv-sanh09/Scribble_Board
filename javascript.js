@@ -1,3 +1,7 @@
+var penColor = "#000";
+var penSize = 0.25;
+var eraserSize = 10;
+
 window.onload = function () {
     var myCanvas = document.getElementById("myCanvas");
     var ctx = myCanvas.getContext("2d");
@@ -35,7 +39,14 @@ window.onload = function () {
             .mouseup(function (e) {
                 isDown = false;
                 ctx.closePath();
-            });
+            })
+
+            .click(function () {
+                document.getElementById("hiddenDiv").hidden = true;
+                document.getElementById("eraserMenu").hidden = true;
+
+            })
+
     }
 
     // Touch Events Handlers
@@ -81,6 +92,10 @@ window.onload = function () {
         evt.preventDefault();
     }, false);
 
+    document.getElementById("colorSelector").value = penColor;
+    document.getElementById("widthSelector").value = penSize * 4;
+    document.getElementById("eraserWidth").value = eraserSize * 4;
+
     document.getElementById("colorSelector").addEventListener('change', setColor, false);
     document.getElementById("widthSelector").addEventListener('change', setWidth, false);
     document.getElementById("eraserWidth").addEventListener('change', setEraserWidth, false);
@@ -101,7 +116,8 @@ function setColor() {
     var clrval = clrselec.value;
     var myCanvas = document.getElementById("myCanvas");
     var ctx = myCanvas.getContext("2d");
-    ctx.strokeStyle = clrval;
+    penColor = clrval;
+    ctx.strokeStyle = penColor;
 }
 
 function setWidth() {
@@ -109,7 +125,8 @@ function setWidth() {
     var wdtval = wdtselec.value / 4;
     var myCanvas = document.getElementById("myCanvas");
     var ctx = myCanvas.getContext("2d");
-    ctx.lineWidth = wdtval;
+    penSize = wdtval;
+    ctx.lineWidth = penSize + 0.25;
 }
 
 function setEraserWidth() {
@@ -117,7 +134,8 @@ function setEraserWidth() {
     var wdtval = wdtselec.value / 4;
     var myCanvas = document.getElementById("myCanvas");
     var ctx = myCanvas.getContext("2d");
-    ctx.lineWidth = wdtval;
+    eraserSize = wdtval;
+    ctx.lineWidth = eraserSize + 0.25;
 }
 function eraserMenu() {
     document.getElementById("hiddenDiv").hidden = true;
@@ -130,7 +148,9 @@ function startEraser() {
     var myCanvas = document.getElementById("myCanvas");
     var ctx = myCanvas.getContext("2d");
     ctx.strokeStyle = "#fff";
-    document.getElementById("eraserWidth").value = ctx.lineWidth * 4;
+    ctx.lineWidth = eraserSize + 0.25;
+    // document.getElementById("eraserWidth").value = ctx.lineWidth * 4;
+
     // var wdtval = wdtselec.value / 4;
     // ctx.lineWidth = 10;
 }
@@ -138,6 +158,34 @@ function startEraser() {
 function startPen() {
     var myCanvas = document.getElementById("myCanvas");
     var ctx = myCanvas.getContext("2d");
-    ctx.strokeStyle = document.getElementById("colorSelector").value;
-    document.getElementById("widthSelector").value = ctx.lineWidth * 4;
+    ctx.strokeStyle = penColor;
+    ctx.lineWidth = penSize + 0.25;
+    // document.getElementById("widthSelector").value = ctx.lineWidth * 4;
 }
+
+function eraseAll() {
+    var myCanvas = document.getElementById("myCanvas");
+    var ctx = myCanvas.getContext("2d");
+    ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
+}
+
+// function Eraser() {
+//     var myCanvas = document.getElementById("myCanvas");
+//     var ctx = myCanvas.getContext("2d");
+//     ctx.strokeStyle = "#fff";
+//     document.getElementById("eraserWidth").value = ctx.lineWidth * 4;
+
+//     document.getElementById("hiddenDiv").hidden = true;
+//     document.getElementById("eraserMenu").hidden = true;
+//     // var wdtval = wdtselec.value / 4;
+//     // ctx.lineWidth = 10;
+// }
+
+// function Pen() {
+//     var myCanvas = document.getElementById("myCanvas");
+//     var ctx = myCanvas.getContext("2d");
+//     ctx.strokeStyle = document.getElementById("colorSelector").value;
+//     document.getElementById("widthSelector").value = ctx.lineWidth * 4;
+//     document.getElementById("hiddenDiv").hidden = true;
+//     document.getElementById("eraserMenu").hidden = true;
+// }
