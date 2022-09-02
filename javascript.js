@@ -100,6 +100,16 @@ window.onload = function () {
     document.getElementById("widthSelector").addEventListener('change', setWidth, false);
     document.getElementById("eraserWidth").addEventListener('change', setEraserWidth, false);
 
+    document.getElementById("X").addEventListener('click',function (){
+        if(document.getElementById("Span").style.opacity!=0){
+            document.getElementById("xORmenu").src="menu.png"
+            document.getElementById("Span").style.opacity=0;
+        }
+        else{
+            document.getElementById("xORmenu").src="x.png"
+            document.getElementById("Span").style.opacity=1;
+        }
+    })
 };
 
 
@@ -178,3 +188,8 @@ function savePDF() {
     pdf.addImage(imgData, 'JPEG', 0, 0);
     pdf.save("download.pdf");
 }
+
+// function toggleSpan(){
+//     var span = document.getElementById("Span");
+//     span.opacity = 0;
+// }

@@ -18,13 +18,31 @@ html {
     left: 45%;
     top: 5%;
     padding: 3px 7px 3px 7px;
-    background-color: beige;
+    background-color: white;
     border-style: groove;
     border-color: black;
     border-width: 1px;
     border-radius: 5%;
+    box-shadow: 5px 5px;
+    opacity: 1;
+    transition: opacity 0.3s linear;
 }
 
+button {
+    background-color: white;
+    border-radius: 10%;
+    margin: 5px;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+button:hover {
+    background-color: rgb(176, 174, 174);
+    cursor: pointer;
+}
 #hiddenDiv {
 
     border-style: inset;
@@ -32,5 +50,22 @@ html {
 
 #eraserMenu {
     border-style: inset;
+}
+
+.hide {
+    opacity: 0;
+}
+
+#X {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 5px 3px;
+}
+
+#X:hover {
+    background-color: white;
 }
 
