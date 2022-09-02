@@ -17,11 +17,12 @@ html {
     position: absolute;
     left: 45%;
     top: 5%;
-    padding: 2px;
+    padding: 3px 7px 3px 7px;
     background-color: beige;
     border-style: groove;
     border-color: black;
     border-width: 1px;
+    border-radius: 5%;
 }
 
 #hiddenDiv {
@@ -33,7 +34,3 @@ html {
     border-style: inset;
 }
 
-#pen,
-#eraser {
-    padding: 5px;
-}

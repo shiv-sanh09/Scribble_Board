@@ -149,10 +149,6 @@ function startEraser() {
     var ctx = myCanvas.getContext("2d");
     ctx.strokeStyle = "#fff";
     ctx.lineWidth = eraserSize + 0.25;
-    // document.getElementById("eraserWidth").value = ctx.lineWidth * 4;
-
-    // var wdtval = wdtselec.value / 4;
-    // ctx.lineWidth = 10;
 }
 
 function startPen() {
@@ -160,7 +156,6 @@ function startPen() {
     var ctx = myCanvas.getContext("2d");
     ctx.strokeStyle = penColor;
     ctx.lineWidth = penSize + 0.25;
-    // document.getElementById("widthSelector").value = ctx.lineWidth * 4;
 }
 
 function eraseAll() {
@@ -169,23 +164,17 @@ function eraseAll() {
     ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
 }
 
-// function Eraser() {
-//     var myCanvas = document.getElementById("myCanvas");
-//     var ctx = myCanvas.getContext("2d");
-//     ctx.strokeStyle = "#fff";
-//     document.getElementById("eraserWidth").value = ctx.lineWidth * 4;
 
-//     document.getElementById("hiddenDiv").hidden = true;
-//     document.getElementById("eraserMenu").hidden = true;
-//     // var wdtval = wdtselec.value / 4;
-//     // ctx.lineWidth = 10;
-// }
+const {
+    jsPDF
+} = window.jspdf;
 
-// function Pen() {
-//     var myCanvas = document.getElementById("myCanvas");
-//     var ctx = myCanvas.getContext("2d");
-//     ctx.strokeStyle = document.getElementById("colorSelector").value;
-//     document.getElementById("widthSelector").value = ctx.lineWidth * 4;
-//     document.getElementById("hiddenDiv").hidden = true;
-//     document.getElementById("eraserMenu").hidden = true;
-// }
+
+function savePDF() {
+    var myCanvas = document.getElementById("myCanvas");
+    var imgData = myCanvas.toDataURL("image/jpeg", 1.0);
+    var pdf = new jsPDF('l', 'in', [15, 8]);  
+  
+    pdf.addImage(imgData, 'JPEG', 0, 0);
+    pdf.save("download.pdf");
+}
