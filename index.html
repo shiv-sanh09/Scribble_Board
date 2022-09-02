@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>HTML5 Canvas Drawing Board</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
     <script type="text/JavaScript"
         src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
     <link rel="stylesheet" href="stylesheet.css">
@@ -16,17 +17,17 @@
 </canvas>
 <span id="Span">
     <button id="pen" onclick="showDiv()">
-        <img src="C:\Users\achar\Desktop\whiteboard\download.png" alt="" width="40" height="40">
+        <img src="pen.png" alt="" width="40" height="40">
     </button>
     <button id="eraser" onclick="eraserMenu()">
-        <img src="C:\Users\achar\Desktop\whiteboard\download (1).png"
-            alt="C:\Users\achar\Desktop\whiteboard\download (1).png" width="40px" height="40px">
+        <img src="eraser.png"
+            alt="download (1).png" width="40px" height="40px">
     </button>
-    <button id="eraser" onclick="eraseAll()">
-        <img src="C:\Users\achar\Desktop\whiteboard\clear-icon-2.png"
-            alt="C:\Users\achar\Desktop\whiteboard\download (1).png" width="40px" height="40px">
+    <button id="clear" onclick="eraseAll()">
+        <img src="clear.png"
+            alt="download (1).png" width="40px" height="40px">
     </button>
-
+    <button onclick="savePDF()"><img src="download.jpg" alt="download" width="40px" height="40px"></button>
     <div id="hiddenDiv" hidden>
         <form action="">
             <input type="color" id="colorSelector">
